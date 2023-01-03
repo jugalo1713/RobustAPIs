@@ -106,10 +106,14 @@ namespace RobusAPI.Services.Courses
             studentToUpdate.LastName = student.LastName;
         }
 
-        public Student[] GetStudentsInCourseList(int courseId, int skip, int take)
+        public Student[] GetStudentsInCourseList(int courseId, int skip, int take, string? search)
         {
             var course = GetCourse(courseId);
-            return course.Students.OrderBy(o => o.Id).Skip(skip).Take(take).ToArray();
+            return course.Students
+                .Where(o => string.IsNullOrWhiteSpace(search)
+                                    || o.FirstName.Contains(search, StringComparison.InvariantCultureIgnoreCase)
+                                    || o.LastName.Contains(search, StringComparison.CurrentCultureIgnoreCase))
+                .OrderBy(o => o.Id).Skip(skip).Take(take).ToArray();
         }
 
         public void SetStudentIdentificationImage(int courseId, int studentId, byte[] image, string fileName)

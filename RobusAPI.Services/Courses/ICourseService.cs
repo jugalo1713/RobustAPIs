@@ -21,7 +21,7 @@ namespace RobusAPI.Services.Courses
         Student? GetStudentInCourse(int courseId, int studentId);
         void UpdateStudentInCourse(int courseId, Student student);
 
-        Student[] GetStudentsInCourseList(int courseId, int skip, int take);
+        Student[] GetStudentsInCourseList(int courseId, int skip, int take, string? search);
         void SetStudentIdentificationImage(int courseId, int studentId, byte[] image, string fieldName);
     }
 }
