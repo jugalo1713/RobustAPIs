@@ -4,9 +4,10 @@ using RobusAPI.Models.Courses;
 using RobusAPI.Services.Courses;
 using RobusAPI.WebApi.Models.Courses;
 
-namespace RobusAPI.WebApi.Controllers
+namespace RobusAPI.WebApi.Controllers.ApiV2
 {
-    [Route("api/[controller]")]
+    [ApiExplorerSettings(GroupName = "v2")]
+    [Route("apiv2/[controller]")]
     [ApiController]
     [Produces("application/json", "application/xml")]
     public class CoursesController : ControllerBase
@@ -28,7 +29,8 @@ namespace RobusAPI.WebApi.Controllers
         [HttpGet]
         [Route("")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CourseDto[]))]
-        
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+
         public CourseDto[] GetList([FromQuery] GetCourseListRequest request)
         {
             var courses = _courseService.GetCourseList(request.Skip ?? 0, request.Take ?? 25, request.Search);
