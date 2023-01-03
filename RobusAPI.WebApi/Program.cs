@@ -67,12 +67,30 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo { 
         Version = "v1",
-        Title = "Course API V1",
+        Title = "Courses API V1",
         Description = "An ASP .NET core web API for managing courses",
         TermsOfService = new Uri("https://example.com/terms"),
         Contact = new OpenApiContact
         {
             Name ="Julian Gallo",
+            Url = new Uri("https://example.com/contact")
+        },
+        License = new OpenApiLicense
+        {
+            Name = "Julian",
+            Url = new Uri("https://example.com/contact")
+        }
+    });
+
+    options.SwaggerDoc("v2", new OpenApiInfo
+    {
+        Version = "v2",
+        Title = "Courses and Students API V2",
+        Description = "An ASP .NET core web API for managing courses and students",
+        TermsOfService = new Uri("https://example.com/terms"),
+        Contact = new OpenApiContact
+        {
+            Name = "Julian Gallo",
             Url = new Uri("https://example.com/contact")
         },
         License = new OpenApiLicense
@@ -100,7 +118,12 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(
+        c =>
+        {
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "Courses API V1");
+            c.SwaggerEndpoint("/swagger/v2/swagger.json", "Courses and Students API V2");
+        });
 }
 else
 {
