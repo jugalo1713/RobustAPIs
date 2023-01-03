@@ -18,4 +18,8 @@
     <ProjectReference Include="..\RobusAPI.Services\RobusAPI.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\ApiV1\" />
+  </ItemGroup>
+
 </Project>
