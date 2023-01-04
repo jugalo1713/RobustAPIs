@@ -25,7 +25,7 @@ This project consists of creating a small API with the best practices including
 * Full API Documentation including XML and filters
 * Fluent API validation
 * Exceptions Handling
-* Basic Authentication
+* Basic Authentication: use user "caller@zirpl.com" and password "Pass123!"
 * API versioning
 
 
