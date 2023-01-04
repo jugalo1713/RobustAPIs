@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RobusAPI.Models.Courses;
 using RobusAPI.Services.Courses;
 using Zirpl.WebApi.Models.ApiV2.Students;
 
@@ -124,5 +125,44 @@ namespace RobusAPI.WebApi.Controllers.ApiV2
 
             return NoContent();
         }
+        [HttpPut]
+        [Route("{studentId:int}/identificationimage")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> SetIdentificationImage([FromRoute]int courseId, [FromRoute]int studentId,[FromForm]IFormFile? file)
+        {
+            if(!_courseService.DoesCourseExists(courseId) || !_courseService.DoesStudentExistInCourse(courseId, studentId)) return NotFound();
+            if (file == null || file.Length > 16777216 || file.Length ==0) return BadRequest();
+
+            byte[]? studentImageBytes = null;
+
+            await using (var memoryStream = new MemoryStream())
+            {
+                await file.CopyToAsync(memoryStream);
+                studentImageBytes = memoryStream.ToArray();
+            }
+
+            _courseService.SetStudentIdentificationImage(courseId, studentId, studentImageBytes, file.FileName);
+
+            return NoContent();
+        }
+
+
+        [HttpDelete]
+        [Route("{studentId:int}/identificationimage")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeleteIdentificationImage([FromRoute] int courseId, [FromRoute] int studentId)
+        {
+            if (!_courseService.DoesCourseExists(courseId) || !_courseService.DoesStudentExistInCourse(courseId, studentId)) return NotFound();
+
+
+            _courseService.SetStudentIdentificationImage(courseId, studentId, null, null);
+
+            return NoContent();
+        }
+
+
     }
 }

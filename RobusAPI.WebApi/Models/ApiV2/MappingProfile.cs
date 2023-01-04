@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using RobusAPI.Models.Courses;
+using RobusAPI.WebApi.Models.Apiv2.Courses;
 using RobusAPI.WebApi.Models.Courses;
+using Zirpl.WebApi.Models.ApiV2.Students;
 
-namespace RobusAPI.WebApi.Models
+namespace RobusAPI.WebApi.Models.ApiV2
 {
     public class MappingProfile: Profile
     {
@@ -14,6 +16,12 @@ namespace RobusAPI.WebApi.Models
             CreateMap<AddCourseRequest, Course>().AfterMap(AfterMap);
 
             CreateMap<UpdateCourseRequest, Course>().AfterMap(AfterMap);
+
+            CreateMap<Student, StudentDto>();
+
+            CreateMap<AddStudentToCourseRequestDto, Student>();
+
+            CreateMap<UpdateStudentInCourseDto, Student>();
         }
 
         private void AfterMap(AddCourseRequest source, Course destination)

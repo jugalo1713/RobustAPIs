@@ -1,4 +1,4 @@
-﻿namespace RobusAPI.WebApi.Models.Courses
+﻿namespace RobusAPI.WebApi.Models.ApiV1.Courses
 {
     public class GetCourseListRequest
     {

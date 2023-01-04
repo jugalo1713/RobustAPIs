@@ -1,4 +1,4 @@
-﻿namespace RobusAPI.WebApi.Models.Courses
+﻿namespace RobusAPI.WebApi.Models.Apiv2.Courses
 {
     public class UpdateCourseRequest
     {

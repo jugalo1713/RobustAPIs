@@ -2,7 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using RobusAPI.Models.Courses;
 using RobusAPI.Services.Courses;
-using RobusAPI.WebApi.Models.Courses;
+using RobusAPI.WebApi.Attributes;
+using RobusAPI.WebApi.Models.Apiv2.Courses;
 
 namespace RobusAPI.WebApi.Controllers.ApiV2
 {
@@ -10,6 +11,8 @@ namespace RobusAPI.WebApi.Controllers.ApiV2
     [Route("apiv2/[controller]")]
     [ApiController]
     [Produces("application/json", "application/xml")]
+    [BasicAuthorization]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public class CoursesController : ControllerBase
     {
         private readonly ICourseService _courseService;

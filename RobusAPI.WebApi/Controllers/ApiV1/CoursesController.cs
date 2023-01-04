@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using RobusAPI.Models.Courses;
 using RobusAPI.Services.Courses;
-using RobusAPI.WebApi.Models.Courses;
+using RobusAPI.WebApi.Models.ApiV1.Courses;
 
 namespace RobusAPI.WebApi.Controllers.ApiV1
 {

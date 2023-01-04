@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
+using RobusAPI.WebApi.Models.ApiV1.Courses;
 
-namespace RobusAPI.WebApi.Models.Courses.Validators
+namespace RobusAPI.WebApi.Models.Courses.ApiV1.Validators
 {
     public class AddCourseRequestValidator : AbstractValidator<AddCourseRequest>
     {

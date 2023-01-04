@@ -7,10 +7,21 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using Microsoft.AspNetCore.Authentication;
+using RobusAPI.WebApi.Handlers;
+using Microsoft.AspNetCore.Authorization;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddAuthentication()
+    .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", options => { });
+builder.Services.AddAuthorization(options => {
+    options.AddPolicy("BasicAuthentication", new AuthorizationPolicyBuilder("BasicAuthentication")
+        .RequireAuthenticatedUser().Build());
+});
 
 builder.Services.AddControllers(options =>
 //ensures 406 when ask for something that is not supported 
@@ -97,6 +108,30 @@ builder.Services.AddSwaggerGen(options =>
         {
             Name = "Julian",
             Url = new Uri("https://example.com/contact")
+        }
+    });
+
+    options.AddSecurityDefinition("basic", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme ="basic",
+        In = ParameterLocation.Header,
+        Description = "Basic Authorization header using the Bearer scheme"
+    });
+
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "basic"
+                }
+            },
+            new string[]{}
         }
     });
 

@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\ApiV1\" />
+    <Folder Include="Controllers\ApiV2\Handlers\" />
   </ItemGroup>
 
 </Project>
