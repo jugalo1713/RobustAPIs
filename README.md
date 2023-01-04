@@ -25,6 +25,8 @@ This project consists of creating a small API with the best practices including
 * Full API Documentation including XML and filters
 * Fluent API validation
 * Exceptions Handling
+* Basic Authentication
+* API versioning
 
 
 
