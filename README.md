@@ -7,15 +7,9 @@ This project was created following the instructions of the Robust RESTful APIS w
 https://www.udemy.com/course/robust-restful-apis-dotnet/
 
 
+## Project Description
 
-
-
-## Tech stack
-
-![AGPL License](https://img.shields.io/static/v1?label=Version&message=.Net&nbsp;6&color=blue)
-
-![AGPL License](https://img.shields.io/static/v1?label=API&nbsp;Client&message=Postman&nbsp;6&color=blue)
-
+Create API RestFul with best and professional practices 
 
 
 ## Documentation
@@ -31,6 +25,14 @@ This project consists of creating a small API with the best practices including
 * API versioning
 * Integration test (Using MSTest)
 * API Client 
+
+
+
+## Tech stack
+
+![AGPL License](https://img.shields.io/static/v1?label=Version&message=.Net&nbsp;6&color=blue)
+
+![AGPL License](https://img.shields.io/static/v1?label=API&nbsp;Client&message=Postman&nbsp;6&color=blue)
 
 
 
