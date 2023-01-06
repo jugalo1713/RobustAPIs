@@ -14,6 +14,8 @@ https://www.udemy.com/course/robust-restful-apis-dotnet/
 
 ![AGPL License](https://img.shields.io/static/v1?label=Version&message=.Net&nbsp;6&color=blue)
 
+![AGPL License](https://img.shields.io/static/v1?label=API&nbsp;Client&message=Postman&nbsp;6&color=blue)
+
 
 
 ## Documentation
@@ -25,12 +27,14 @@ This project consists of creating a small API with the best practices including
 * Full API Documentation including XML and filters
 * Fluent API validation
 * Exceptions Handling
-* Basic Authentication: use user "caller@zirpl.com" and password "Pass123!"
+* Basic Authentication
 * API versioning
+* Integration test (Using MSTest)
+* API Client 
 
 
 
 ## Authors
 
-- [Nathan LaFratta](https://www.udemy.com/user/nathan-lafratta/)
-
+- Teacher: [Nathan LaFratta](https://www.udemy.com/user/nathan-lafratta/)
+- Student: Julian Gallo Londoño
