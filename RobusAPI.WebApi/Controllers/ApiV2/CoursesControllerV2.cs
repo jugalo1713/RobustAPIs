@@ -8,16 +8,16 @@ using RobusAPI.WebApi.Models.Apiv2.Courses;
 namespace RobusAPI.WebApi.Controllers.ApiV2
 {
     [ApiExplorerSettings(GroupName = "v2")]
-    [Route("apiv2/[controller]")]
+    [Route("apiv2/courses")]
     [ApiController]
     [Produces("application/json", "application/xml")]
     [BasicAuthorization]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    public class CoursesController : ControllerBase
+    public class CoursesControllerV2 : ControllerBase
     {
         private readonly ICourseService _courseService;
         private readonly IMapper _mapper;
-        public CoursesController(ICourseService courseService, IMapper mapper)
+        public CoursesControllerV2(ICourseService courseService, IMapper mapper)
         {
             this._courseService = courseService;
             this._mapper = mapper;

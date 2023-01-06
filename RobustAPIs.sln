@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobusAPI.Models", "RobusAPI.Models\RobusAPI.Models.csproj", "{195D31EC-9502-431B-B5C6-53F9E006F97B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RobusAPI.Models", "RobusAPI.Models\RobusAPI.Models.csproj", "{195D31EC-9502-431B-B5C6-53F9E006F97B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobusAPI.Services", "RobusAPI.Services\RobusAPI.Services.csproj", "{ADAE6900-5300-413A-83F6-FA6EECC27086}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RobusAPI.Services", "RobusAPI.Services\RobusAPI.Services.csproj", "{ADAE6900-5300-413A-83F6-FA6EECC27086}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobusAPI.WebApi", "RobusAPI.WebApi\RobusAPI.WebApi.csproj", "{01D0CD48-5808-4609-9120-D5612DDC31C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RobusAPI.WebApi", "RobusAPI.WebApi\RobusAPI.WebApi.csproj", "{01D0CD48-5808-4609-9120-D5612DDC31C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobusAPI.Integrations", "RobusAPI.Integrations\RobusAPI.Integrations.csproj", "{C7BD3239-5DF6-48FD-BE7E-94392CCB7662}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobusAPI.Tests", "RobusAPI.Tests\RobusAPI.Tests.csproj", "{C01716AB-2FB1-4E27-93B6-66B224799855}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{01D0CD48-5808-4609-9120-D5612DDC31C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01D0CD48-5808-4609-9120-D5612DDC31C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01D0CD48-5808-4609-9120-D5612DDC31C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7BD3239-5DF6-48FD-BE7E-94392CCB7662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7BD3239-5DF6-48FD-BE7E-94392CCB7662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7BD3239-5DF6-48FD-BE7E-94392CCB7662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7BD3239-5DF6-48FD-BE7E-94392CCB7662}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C01716AB-2FB1-4E27-93B6-66B224799855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C01716AB-2FB1-4E27-93B6-66B224799855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C01716AB-2FB1-4E27-93B6-66B224799855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C01716AB-2FB1-4E27-93B6-66B224799855}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RobusAPI.Models.Courses;
 using RobusAPI.Services.Courses;
+using RobusAPI.WebApi.Attributes;
 using Zirpl.WebApi.Models.ApiV2.Students;
 
 namespace RobusAPI.WebApi.Controllers.ApiV2
@@ -11,6 +11,7 @@ namespace RobusAPI.WebApi.Controllers.ApiV2
     [ApiExplorerSettings(GroupName = "v2")]
     [ApiController]
     [Produces("application/json", "application/xml")]
+    [BasicAuthorization]
     public class StudentsController : ControllerBase
     {
         private ICourseService _courseService;
